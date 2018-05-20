@@ -1,0 +1,30 @@
+<h1>Grocery Store</h1>
+
+<h2>Available Items</h2>
+
+<ul>
+  {{#each product}}
+  {{/each}}
+</ul>
+
+<h2>Cart</h2>
+
+<ul>
+  {{#each item}}
+  {{/each}}
+</ul>
+
+<h2>Add an item/h2>
+<form>
+
+    <label for="name">Item:</label>
+    <input type="text" id="item" name="name">
+
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price">
+
+    <label for="stock">Available Quantity:</label>
+    <input type="text" id="stockQuantity" name="stock">
+
+  <button type="submit">Add Item</button>
+</form>
