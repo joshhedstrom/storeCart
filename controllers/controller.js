@@ -13,7 +13,9 @@ router.post('/cart', (req, res)=>{
 
 
 router.get('/', (req, res)=>{
-	//read
+	store.read((data)=>{
+		
+	})
 })
 
 
@@ -34,3 +36,4 @@ router.delete('/cart/:id', (req, res)=>{
 	//delete
 })
 
+module.exports = router;
