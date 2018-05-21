@@ -12,12 +12,12 @@ router.post('/store', (req, res) => {
 })
 
 router.get('/', (req, res) => {
+	//read
     store.read('products', (data) => {
         let items = {products: data};
         res.render('index.handlebars', items)
     });
 })
-
 
 router.put('/store/:id', (req, res) => {
     //update
