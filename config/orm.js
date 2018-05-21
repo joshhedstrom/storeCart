@@ -1,14 +1,9 @@
 const connection = require('../config/connection.js');
 
 const orm = {
-	create: (table, name, price, quantity, cb)=>{
+	create: (table, item, cb)=>{
 		let queryString = 'INSERT INTO ' + table + ' SET ?;';
-		let values = {
-			product_name: name,
-			price: price,
-			stock_quantity: quantity
-		}
-		connection.query(queryString, values, (err, res)=>{
+		connection.query(queryString, item, (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
 		})

@@ -1,8 +1,8 @@
 const orm = require('../config/orm.js');
 
 const store = {
-    create: (table, name, price, quantity, cb) => {
-    	orm.create(table, name, price, quantity, (res)=>{
+    create: (table, item, cb) => {
+    	orm.create(table, item, (res)=>{
     		cb(res);
     	});
     },
