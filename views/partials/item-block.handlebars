@@ -1,8 +1,8 @@
-<li>
-	{{product_name}}
+<div>
+	Item: {{product_name}} || Cost: {{price}} || {{#if in_cart}}Available: {{stock_quantity}}{{else}}In Cart: {{cart_quantity}}{{/if}}
 
 	<button class="add-cart" data-id="{{id}}" >
-		{{#if in_cart}}Remove from cart{{else}}Add to cart{{/if}}
+		{{#if in_cart}}Add to cart{{else}}Remove from Cart{{/if}}
 	</button>
-
-</li>
+</div>
+<br>

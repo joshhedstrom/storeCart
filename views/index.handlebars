@@ -3,9 +3,10 @@
 <h2>Available Items</h2>
 
 <ul>
-  {{!-- <li>testing</li> --}}
   {{#each products}}
-  <li>Item: {{this.product_name}} || Cost: {{this.price}} || Available: {{this.stock_quantity}}</li>
+    {{#unless in_cart}}
+        {{>item-block in_cart=true}}
+    {{/unless}}
   {{/each}}
 </ul>
 

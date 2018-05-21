@@ -12,8 +12,8 @@ const store = {
     	});
     },
 
-    update: (table, stock, item, cb) => {
-    	orm.update(table, stock, item, (res)=>{
+    update: (table, quantity, item, cb) => {
+    	orm.update(table, quantity, item, (res)=>{
     		cb(res);
     	});
     },
