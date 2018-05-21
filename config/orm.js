@@ -2,7 +2,7 @@ const connection = require('../config/connection.js');
 
 const orm = {
 	create: (table, name, price, quantity, cb)=>{
-		let queryString = `INSERT INTO ${table} SET ?;`;
+		let queryString = 'INSERT INTO ' + table + ' SET ?;';
 		let values = {
 			product_name: name,
 			price: price,
@@ -14,21 +14,21 @@ const orm = {
 		})
 	},
 	read: (table, cb)=>{
-		let queryString = `SELECT * FROM products;`
+		let queryString = 'SELECT * FROM ' + table +' ;'
 		connection.query(queryString, (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
 		})
 	},
 	update: (table, stock, item, cb)=>{
-		let queryString = `UPDATE ${table} SET ? WHERE ?;`
+		let queryString = 'UPDATE ' + table + ' SET ? WHERE ?;'
 		connection.query(queryString, [{stock}, {item}], (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
 		})
 	},
 	delete: (table, id, cb)=>{
-		let queryString = `DELETE FROM ${table} WHERE ?;`
+		let queryString = 'DELETE FROM ' + table + ' WHERE ?;'
 		connection.query(queryString, {id: id}, (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
