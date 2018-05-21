@@ -7,7 +7,8 @@ const store = require('../models/store.js');
 // 	console.log('callback function: ', res)
 // }
 
-router.post('/store', (req, res) => {
+router.post('/store/new', (req, res) => {
+	console.log('reached')
     //create
 })
 
