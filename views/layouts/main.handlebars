@@ -8,12 +8,36 @@
 	</head>
 	<body>
 		<header>
-			<img src="../public/assets/img/cart.png" alt="">
+			{{!-- <img src="../public/assets/img/cart.png" alt=""> --}}
 		</header>
 		<main>
 			{{{body}}}
 		</main>
-		<script href="/assets/scripts/app.js" ></script>
+		<script>
+			 $('#submit').on('click', (event) => {
+		        event.preventDefault();
+		        let name = $('#item').val().trim();
+
+		        let item = {
+		            product_name: name,
+		            price: 5,
+		            stock_quantity: 10,
+		            in_cart: false,
+		            cart_quantity: 0
+		        }
+
+		        console.log(item)
+
+		        $.post('/store/new', item, (data)=>{
+		        	console.log('data from app.js: ', data)
+		        })
+		    });
+
+
+		    $('.statusChange').click(() => {
+		        console.log('here');
+		    });
+		</script>
 		<footer>
 			<p>Copyright Josh Hedstrom 2018</p>
 		</footer>
