@@ -13,9 +13,13 @@ router.post('/cart', (req, res)=>{
 
 
 router.get('/', (req, res)=>{
-	store.read((data)=>{
-		
-	})
+		res.render("index");
+	// store.read( (data)=>{
+	// 	// console.log(data)
+	// });
+	// store.read((data)=>{
+
+	// })
 })
 
 

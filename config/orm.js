@@ -14,7 +14,7 @@ const orm = {
 		})
 	} ,
 	read: (table, cb)=>{
-		let queryString = `SELECT * FROM ${table};`
+		let queryString = `SELECT * FROM products;`
 		connection.query(queryString, (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
