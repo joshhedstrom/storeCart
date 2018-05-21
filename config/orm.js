@@ -12,28 +12,28 @@ const orm = {
 			if (err) return console.log(err);
 			cb(res);
 		})
-	} ,
+	},
 	read: (table, cb)=>{
 		let queryString = `SELECT * FROM products;`
 		connection.query(queryString, (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
 		})
-	} ,
+	},
 	update: (table, stock, item, cb)=>{
 		let queryString = `UPDATE ${table} SET ? WHERE ?;`
 		connection.query(queryString, [{stock}, {item}], (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
 		})
-	} ,
+	},
 	delete: (table, id, cb)=>{
 		let queryString = `DELETE FROM ${table} WHERE ?;`
 		connection.query(queryString, {id: id}, (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
 		})
-	} ,
+	},
 }
 
 module.exports = orm;

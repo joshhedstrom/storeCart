@@ -1,4 +1,7 @@
 const orm = require('../config/orm.js');
+// let cb = function (res) {
+// 	console.log(res)
+// }
 
 const store = {
     create: (table, name, price, quantity, cb) => {
@@ -6,9 +9,9 @@ const store = {
     		// cb(res);
     	});
     },
-    read: (table) => {
+    read: (table, cb) => {
     	orm.read(table, (res)=>{
-    		// cb(res);
+    		console.log(res)
     	});
     },
 
