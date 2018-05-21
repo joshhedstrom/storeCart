@@ -3,18 +3,21 @@
 <h2>Available Items</h2>
 
 <ul>
-  {{#each product}}
+  {{!-- <li>testing</li> --}}
+  {{#each products}}
+  <li>Item: {{this.product_name}} || Cost: {{this.price}} || Available: {{this.stock_quantity}}</li>
   {{/each}}
 </ul>
 
 <h2>Cart</h2>
 
 <ul>
-  {{#each item}}
+  {{#each cart}}
+  <li>{{this.product_name}}</li>
   {{/each}}
 </ul>
 
-<h2>Add an item</h2>
+{{!-- <h2>Add an item</h2>
 <form>
 
     <label for="name">Item:</label>
@@ -28,3 +31,4 @@
 
   <button type="submit">Add Item</button>
 </form>
+ --}}
