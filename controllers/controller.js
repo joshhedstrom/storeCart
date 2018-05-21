@@ -17,17 +17,23 @@ router.post('/cart', (req, res)=>{
 
 
 router.get('/', (req, res)=>{
-		res.render("index.handlebars");
-	store.read('table', cb, (data)=>{
-		console.log('data: ', data)
+	store.read('products', cb, (data)=>{
+		console.log('data1: ', data)
 		let hbsObject = {
 			items: data,
 		}
 		console.log(hbsObject)
 	});
-	store.read((data)=>{
 
-	})
+	store.read('cart', cb, (data)=>{
+		res.render('index.handlebars');
+		console.log('data2: ', data)
+		let hbsObject = {
+			items: data,
+		}
+		console.log(hbsObject)
+	});
+		res.render('index.handlebars');
 })
 
 
