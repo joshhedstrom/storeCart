@@ -5,9 +5,11 @@ if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
     connection = mysql.createConnection({
+        root: 3000,
         host: 'localhost',
         user: 'root',
-        database: 'store_cart_db'
+        password: '',
+        database: 'store_db'
     })
 };
 

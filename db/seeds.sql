@@ -1,5 +1,5 @@
-INSERT INTO products(product_name, price, stock_quantity)
-VALUES('Apples', 4, 10);
+INSERT INTO products(product_name, price, stock_quantity, in_cart, cart_quantity)
+VALUES('Apples', 4, 10, true, 3);
 INSERT INTO products(product_name, price, stock_quantity)
 VALUES('Oranges', 5, 10);
 INSERT INTO products(product_name, price, stock_quantity)
@@ -18,6 +18,3 @@ INSERT INTO products(product_name, price, stock_quantity)
 VALUES('Toothpaste', 4, 10);
 INSERT INTO products(product_name, price, stock_quantity)
 VALUES('Vitamins', 10, 10);
-
-INSERT INTO products(product_name, price, in_cart, cart_quantity)
-VALUES('Bread', 3, true, 2);

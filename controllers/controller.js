@@ -23,15 +23,22 @@ router.get('/', (req, res) => {
 router.put('/store/:id', (req, res) => {
     //update
     store.read('products', (data) => {
-        let result = data.filter(item => item.id == req.params.id);
+    	console.log(data.id)
+        // console.log(data)
+        let result = data.forEach((elem, i) => {
+        	console.log(elem.id)
+            if (elem.id === data.id) {
+            	console.log('====>>', elem)
+            }
+        })
         console.log(result)
-        // updatedQuantity = result.stock_quantity--;
-        // console.log(updatedQuantity)
-        // return updatedQuantity;
+            // updatedQuantity = result.stock_quantity--;
+            // console.log(updatedQuantity)
+            // return updatedQuantity;
     })
-    store.update('products', newQuantity, (data) => {
-        console.log('data==>', data)
-    })
+    // store.update('products', newQuantity, (data) => {
+        // console.log('data==>', data)
+    // })
 })
 
 router.delete('/store/:id', (req, res) => {

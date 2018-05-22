@@ -1,7 +1,4 @@
-DROP DATABASE IF EXISTS store_cart_db;
-CREATE DATABASE store_cart_db;
-
-USE store_cart_db;
+USE k9bi6c88hk1vw8z6;
 
 CREATE TABLE products(
 id INTEGER(10) AUTO_INCREMENT NOT NULL,
