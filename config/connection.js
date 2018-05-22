@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'store_db'
+        database: 'store_cart_db'
     })
 };
 
