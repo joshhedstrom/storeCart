@@ -20,21 +20,21 @@ router.get('/', (req, res) => {
 
 router.put('/store/:id', (req, res) => {
     let id = parseInt(req.body.id);
-    //update
+    
     store.read('products', (data) => {
-        let result = data.forEach((elem, i) => {
+        let result;
+        let newData = data.forEach((elem, i) => {
             if (elem.id === id) {
-            	console.log('====>>', elem)
+                result = elem;
             }
         })
-        console.log(result)
-            updatedQuantity = result.stock_quantity--;
-            console.log(updatedQuantity)
-            return updatedQuantity;
+
+        let updatedQuantity = result.stock_quantity - 1;
+
+        store.update('products', {stock_quantity: updatedQuantity}, id, (data) => {
+            res.json(data)
+        })
     })
-    // store.update('products', newQuantity, (data) => {
-        // console.log('data==>', data)
-    // })
 })
 
 router.delete('/store/:id', (req, res) => {

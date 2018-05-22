@@ -15,9 +15,9 @@ const orm = {
 			cb(res);
 		})
 	},
-	update: (table, quantity, item, cb)=>{
+	update: (table, quantity, id, cb)=>{
 		let queryString = 'UPDATE ' + table + ' SET ? WHERE ?;'
-		connection.query(queryString, [{quantity}, {item}], (err, res)=>{
+		connection.query(queryString, [quantity, {id: id}], (err, res)=>{
 			if (err) return console.log(err);
 			cb(res);
 		})
