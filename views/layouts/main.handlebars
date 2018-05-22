@@ -37,10 +37,13 @@
 		    $('.statusChange').on('click', function(e) {
 		    	e.preventDefault();
 		    	let id = $(this).data('id')
+		    	console.log('id: ', id)
 
 		    	$.ajax("/store/" + id, {
 				      type: "PUT",
+				      data: {id: id}
 				    }).then((data)=> {
+				    	console.log('ajax data: ', data)
 				        // location.reload();
 				     }
 				);
