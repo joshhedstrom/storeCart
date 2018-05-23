@@ -1,3 +1,46 @@
 body {
 	background-color: tan;
 }
+
+.header {
+	font-size: 38px;
+	text-align: center;
+	font-weight: normal;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
+.products, .cart, .addItem {
+	border: black solid 2px;
+	border-radius: 5px;
+	margin: 5px;
+	padding: 3px;
+}
+
+h2 {
+	text-align: center;
+}
+
+ul {
+	padding-left: 40px;
+}
+
+button {
+	border-radius: 10px;
+	font-size: 14px;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
+.addItem {
+	text-align: center;
+}
+
+form {
+	padding-bottom: 10px;
+}
+
+footer {
+	text-align: center;
+	font-weight: bold;
+	border-top: black solid 1px;
+	margin-top: 25px;
+}

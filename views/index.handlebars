@@ -2,10 +2,10 @@
   <h1>Grocery Store</h1>
 </div>
 
-<h2>Available Items</h2>
 
-<div>
-  <ul class="products">
+<div class="products">
+<h2>Available Items</h2>
+  <ul>
     {{#each products}}
       {{#unless in_cart}}
           {{>item-block in_cart=true}}
@@ -14,9 +14,9 @@
   </ul>
 </div>
 
-<h2>Cart</h2>
 
 <div class="cart">
+<h2>Cart</h2>
   <ul>
     {{#each products}}
       {{#if in_cart}}
@@ -26,9 +26,9 @@
   </ul>
 </div>
 
-<h2>Can't find what you're looking for? Add an item here!</h2>
 
 <div class="addItem">
+<h2>Can't find what you're looking for? Add an item here!</h2>
   <form>
     <label>Item:</label>
     <input id="item">
