@@ -16,6 +16,13 @@ body {
 	padding: 3px;
 }
 
+.img {
+	background-image: url('../img/cart.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 450px;
+}
+
 h2 {
 	text-align: center;
 }
