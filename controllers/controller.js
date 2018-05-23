@@ -20,6 +20,16 @@ router.get('/', (req, res) => {
 
 router.put('/store/:id', (req, res) => {
     let id = parseInt(req.body.id);
+    let text = req.body.text;
+    let inCart;
+
+    if (text === 'Add to cart') {
+        inCart = false;
+    } 
+
+    else if (text === 'Remove from Cart') {
+        inCart = true;
+    }
 
     store.read('products', (data) => {
         let result;
@@ -29,18 +39,34 @@ router.put('/store/:id', (req, res) => {
             }
         })
 
-        let updatedQuantity = result.stock_quantity - 1;
-        let cartQuantity = result.cart_quantity + 1;
 
-        store.update('products', {
-            stock_quantity: updatedQuantity,
-            cart_quantity: cartQuantity,
-            in_cart: true,
-            
-        }, id, (data) => {
-            res.json(data)
-        })
+        if (!inCart) {
+            let updatedQuantity = result.stock_quantity - 1;
+            let cartQuantity = result.cart_quantity + 1;
 
+            store.update('products', {
+                stock_quantity: updatedQuantity,
+                cart_quantity: cartQuantity,
+                in_cart: true,
+
+            }, id, (data) => {
+                res.json(data)
+            })
+        } 
+
+        else if (inCart) {
+            let updatedQuantity = result.stock_quantity + 1;
+            let cartQuantity = result.cart_quantity - 1;
+
+            store.update('products', {
+                stock_quantity: updatedQuantity,
+                cart_quantity: cartQuantity,
+                in_cart: false,
+
+            }, id, (data) => {
+                res.json(data)
+            })
+        }
     })
 })
 
